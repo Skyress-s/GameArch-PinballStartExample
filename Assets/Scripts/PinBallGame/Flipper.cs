@@ -25,5 +25,6 @@ public class Flipper : MonoBehaviour {
         // other raindrops / pinballs dont clip through and receives velocity!
         
         _rb.MoveRotation(_startRot * Quaternion.Euler(0,0,animationCurve.Evaluate(_timer) * 90f));
+        
     }
 }

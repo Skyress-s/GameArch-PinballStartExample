@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Examples.CommandPattern.Commands;
 using UnityEngine;
 
 namespace Examples.CommandPattern {
@@ -7,25 +8,24 @@ namespace Examples.CommandPattern {
     // Example command patterns, will call a command if any every two seconds
     public class CommandManager : MonoBehaviour {
         // Singleton
-        public static CommandManager Instance { get; private set; }
+        // public static CommandManager Instance { get; private set; }
         
         
         Stack<ICommand> _commandStack = new Stack<ICommand>();
-        
         private float _timer = 2f;
         public void AddCommand(ICommand command) {
             _commandStack.Push(command);
         }
         
         
-        // Singleton setup
-        private void Awake() {
-            if (Instance == null) {
-                Instance = this;
-                return;
-            }
-            Destroy(this);
-        }
+        // // Singleton setup
+        // private void Awake() {
+        //     if (Instance == null) {
+        //         Instance = this;
+        //         return;
+        //     }
+        //     Destroy(this);
+        // }
 
         private void Update() {
             // Why is this bad?
