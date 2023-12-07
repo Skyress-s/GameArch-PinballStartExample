@@ -74,7 +74,7 @@ namespace ECS {
                     // float3 pos = new float3(math.cos(spinSpeed)*dist, math.sin(spinSpeed) * dist, 0);
                     float time = (float)spawner.count / 10f;
                     float radius = time * 0.3f;
-                    float thetha =  (100f * time) % (math.PI);
+                    float thetha =  (1000f * time) % (math.PI);
                     float tau = time % (2f * math.PI);
                     float x = radius * math.sin(thetha) * math.cos(tau);
                     float y = radius * math.sin(thetha) * math.sin(tau);
